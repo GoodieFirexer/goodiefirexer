@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Engine Depot : Enginen'chi - Goodie's Room</title>
+    <!-- Ruffle Flash Player (CDN) -->
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <style>
+        /* フォント定義 (Flange BQ Bold) */
+        @font-face {
+            font-family: 'Flange BQ Bold';
+            src: local('Flange BQ Bold'), local('FlangeBQ-Bold');
+            font-weight: bold;
+        }
+
+        body {
+            background-color: #87CEEB;
+            background-image: linear-gradient(135deg, #87CEEB 0%, #E0F6FF 50%, #87CEEB 100%);
+            font-family: 'Flange BQ Bold', 'Impact', 'Arial Black', sans-serif;
+            color: #000080;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 4px ridge #00bfff;
+            box-shadow: 8px 8px 0px #005f9e;
+            padding: 15px;
+        }
+
+        header {
+            background: linear-gradient(to bottom, #b0e0e6, #4682b4);
+            border: 3px inset #ffffff;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img.header-img {
+            max-height: 110px;
+            width: auto;
+            border: 2px outset #ffffff;
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        header h1 {
+            font-size: 32px;
+            color: #ffffff;
+            text-shadow: 2px 2px #000000, -2px -2px #0000ff;
+            margin: 0 10px;
+            text-align: center;
+        }
+
+        marquee {
+            background-color: #000080;
+            color: #ffff00;
+            font-size: 14px;
+            padding: 5px;
+            margin: 10px 0;
+            border: 2px inset #ffffff;
+            font-weight: bold;
+        }
+
+        .main-layout {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav {
+            width: 260px;
+            background: #e0f6ff;
+            border: 3px outset #87ceeb;
+            padding: 10px;
+            box-sizing: border-box;
+            flex-shrink: 0;
+        }
+
+        nav h2 {
+            font-size: 16px;
+            background: #4682b4;
+            color: #ffffff;
+            padding: 6px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: center;
+            border: 2px inset #ffffff;
+            text-shadow: 1px 1px #000000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+
+        nav li {
+            margin-bottom: 8px;
+        }
+
+        nav a {
+            display: block;
+            background: #b0e0e6;
+            color: #000080;
+            text-decoration: none;
+            padding: 8px;
+            border: 2px outset #ffffff;
+            font-weight: bold;
+            font-size: 13px;
+            text-align: center;
+            word-break: break-word;
+        }
+
+        nav a:hover {
+            background: #ffff00;
+            color: #ff0000;
+            border-style: inset;
+        }
+
+        .content {
+            flex: 1;
+            background: #f4ffff;
+            border: 3px outset #87ceeb;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .section-box {
+            background: #ffffff;
+            border: 2px groove #4682b4;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            background: linear-gradient(to right, #4682b4, #87ceeb);
+            color: #ffffff;
+            padding: 5px 10px;
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 18px;
+            border-bottom: 2px solid #000080;
+            text-shadow: 1px 1px #000000;
+        }
+
+        /* SWFプレイヤー配置セクション（スクロール不可・固定サイズ） */
+        .flash-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .flash-container {
+            width: 788.75px;
+            height: 472.5px;
+            border: 3px ridge #4682b4;
+            background-color: #000000;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .flash-container object,
+        .flash-container embed,
+        .flash-container ruffle-player {
+            width: 100% !important;
+            height: 100% !important;
+            overflow: hidden !important;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #000080;
+            border-top: 2px dashed #4682b4;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- ヘッダー -->
+    <header>
+        <img src="Mikan.png" alt="Mikan" class="header-img">
+        <h1>My Engine Depot : Enginen'chi</h1>
+        <img src="Yuzuhiko.png" alt="Yuzuhiko" class="header-img">
+    </header>
+
+    <!-- 流れるテキスト -->
+    <marquee scrollamount="4">★ Welcome to My Engine Depot: Enginen'chi! ★ Enjoy the Interactive Flash Content! ★</marquee>
+
+    <div class="main-layout">
+        <!-- ナビゲーション & リンク集 -->
+        <nav>
+            <h2>Navigation Menu</h2>
+            <ul>
+                <li><a href="index.html">Home (Top Page)</a></li>
+                <li><a href="videos.html">My Featured Videos</a></li>
+                <li><a href="sprites.html">Sprites : Enginen'chi</a></li>
+                <li><a href="sprites2.html">Sprites : Kochi'Rail</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1v4OHaAVX_ENdfnTeI2HdycLYOVG7YWBP" target="_blank">My TTTE' Themes is DOWNLOAD HERE!!</a></li>
+            </ul>
+
+            <h2>Links</h2>
+            <ul>
+                <li><a href="https://soundcloud.com/tobias2025toby" target="_blank">SoundCloud</a></li>
+                <li><a href="https://www.youtube.com/@GonbeKabino2025" target="_blank">YouTube</a></li>
+                <li><a href="https://www.pixiv.net/users/114339062" target="_blank">Pixiv(Speaks Japanese)</a></li>
+                <img src="Shimizu.png" alt="Shimizu" width="235">
+                <img src="Yoshioka.png" alt="Yoshioka" width="235">
+                <img src="Toshikazu.png" alt="Toshikazu" width="235">
+                <img src="Rio.png" alt="Rio" width="235">
+            </ul>
+        </nav>
+
+        <!-- メインコンテンツ -->
+        <main class="content">
+            <div class="section-box">
+                <h3 class="section-title">My Engine Depot : Enginen'chi</h3>
+                <p>Welcome to the Engine Depot! Enjoy the interactive Flash content below.</p>
+                
+                <!-- SWF プレイヤー配置セクション（中央配置・スクロールなし） -->
+                <div class="flash-wrapper">
+                    <div class="flash-container">
+                        <object type="application/x-shockwave-flash" data="ACTIVITY-depot.swf" width="788.75" height="472.5">
+                            <param name="movie" value="ACTIVITY-depot.swf">
+                            <param name="quality" value="high">
+                            <param name="bgcolor" value="#ffffff">
+                            <param name="play" value="true">
+                            <param name="loop" value="true">
+                            <param name="wmode" value="window">
+                            <param name="scale" value="exactfit">
+                            <param name="allowScriptAccess" value="sameDomain">
+                            <embed src="ACTIVITY-depot.swf" width="788.75" height="472.5" quality="high" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+                        </object>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Goodie's Room - GoodieFirexer</p>
+    </footer>
+</div>
+
+</body>
+</html>

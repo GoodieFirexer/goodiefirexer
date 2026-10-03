@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goodie's Room - Sprite Downloads</title>
+    <style>
+        /* フォント定義 (Flange BQ Bold) */
+        @font-face {
+            font-family: 'Flange BQ Bold';
+            src: local('Flange BQ Bold'), local('FlangeBQ-Bold');
+            font-weight: bold;
+        }
+
+        body {
+            background-color: #87CEEB;
+            background-image: linear-gradient(135deg, #87CEEB 0%, #E0F6FF 50%, #87CEEB 100%);
+            font-family: 'Flange BQ Bold', 'Impact', 'Arial Black', sans-serif;
+            color: #000080;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 4px ridge #00bfff;
+            box-shadow: 8px 8px 0px #005f9e;
+            padding: 15px;
+        }
+
+        header {
+            background: linear-gradient(to bottom, #b0e0e6, #4682b4);
+            border: 3px inset #ffffff;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img.header-img {
+            max-height: 110px;
+            width: auto;
+            border: 2px outset #ffffff;
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        header h1 {
+            font-size: 32px;
+            color: #ffffff;
+            text-shadow: 2px 2px #000000, -2px -2px #0000ff;
+            margin: 0 10px;
+            text-align: center;
+        }
+
+        marquee {
+            background-color: #000080;
+            color: #ffff00;
+            font-size: 14px;
+            padding: 5px;
+            margin: 10px 0;
+            border: 2px inset #ffffff;
+            font-weight: bold;
+        }
+
+        .main-layout {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav {
+            width: 260px;
+            background: #e0f6ff;
+            border: 3px outset #87ceeb;
+            padding: 10px;
+            box-sizing: border-box;
+            flex-shrink: 0;
+        }
+
+        nav h2 {
+            font-size: 16px;
+            background: #4682b4;
+            color: #ffffff;
+            padding: 6px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: center;
+            border: 2px inset #ffffff;
+            text-shadow: 1px 1px #000000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+
+        nav li {
+            margin-bottom: 8px;
+        }
+
+        nav a {
+            display: block;
+            background: #b0e0e6;
+            color: #000080;
+            text-decoration: none;
+            padding: 8px;
+            border: 2px outset #ffffff;
+            font-weight: bold;
+            font-size: 13px;
+            text-align: center;
+            word-break: break-word;
+        }
+
+        nav a:hover {
+            background: #ffff00;
+            color: #ff0000;
+            border-style: inset;
+        }
+
+        .content {
+            flex: 1;
+            background: #f4ffff;
+            border: 3px outset #87ceeb;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .section-box {
+            background: #ffffff;
+            border: 2px groove #4682b4;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            background: linear-gradient(to right, #4682b4, #87ceeb);
+            color: #ffffff;
+            padding: 5px 10px;
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 18px;
+            border-bottom: 2px solid #000080;
+            text-shadow: 1px 1px #000000;
+        }
+
+        /* スプライトグリッド設定 (1段5列) */
+        .sprite-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        /* 個別スプライトカード */
+        .sprite-card {
+            background: #e0f6ff;
+            border: 2px outset #ffffff;
+            padding: 8px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .sprite-preview {
+            width: 100%;
+            height: 80px;
+            object-fit: contain;
+            background-color: #ffffff;
+            border: 1px inset #87ceeb;
+            margin-bottom: 6px;
+        }
+
+        .sprite-title {
+            font-size: 11px;
+            color: #000080;
+            margin: 2px 0 6px 0;
+            word-break: break-all;
+        }
+
+        .download-btn {
+            display: inline-block;
+            width: 100%;
+            background: #4682b4;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 4px 0;
+            border: 2px outset #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            box-sizing: border-box;
+        }
+
+        .download-btn:hover {
+            background: #ffff00;
+            color: #ff0000;
+            border-style: inset;
+        }
+
+        /* 画面幅が狭い場合（モバイル等）のフォールバック調整 */
+        @media (max-width: 768px) {
+            .main-layout {
+                flex-direction: column;
+            }
+            nav {
+                width: 100%;
+            }
+            .sprite-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header (Title & Side Images) -->
+    <header>
+        <img src="Mikan.png" alt="Mikan" class="header-img">
+        <h1>Sprites : Enginen'chi</h1>
+        <img src="Yuzuhiko.png" alt="Yuzuhiko" class="header-img">
+    </header>
+
+    <!-- Marquee Banner -->
+    <marquee scrollamount="4">★ Welcome to the Sprite Downloads Page! ★ Click "Download" to save your favorite images! ★</marquee>
+
+    <div class="main-layout">
+        <!-- Navigation Menu & Links -->
+        <nav>
+            <h2>Navigation Menu</h2>
+            <ul>
+                <li><a href="index.html">Home (Top Page)</a></li>
+                <li><a href="depot.html">My Engine Depot : Enginen'chi</a></li>
+                <li><a href="sprites2.html">Sprites : Kochi'Rail</a></li>
+                <li><a href="videos.html">My Featured Videos</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1v4OHaAVX_ENdfnTeI2HdycLYOVG7YWBP" target="_blank">My TTTE' Themes is DOWNLOAD HERE!!</a></li>
+            </ul>
+
+            <h2>Links</h2>
+            <ul>
+                <li><a href="https://soundcloud.com/tobias2025toby" target="_blank">SoundCloud</a></li>
+                <li><a href="https://www.youtube.com/@GonbeKabino2025" target="_blank">YouTube</a></li>
+                <li><a href="https://www.pixiv.net/users/114339062" target="_blank">Pixiv(Speaks Japanese)</a></li>
+                <img src="Shimizu.png" alt="Shimizu" width="235">
+                <img src="Yoshioka.png" alt="Yoshioka" width="235">
+                <img src="Toshikazu.png" alt="Toshikazu" width="235">
+                <img src="Rio.png" alt="Rio" width="235">
+                <img src="Haruyama.png" alt="Haruyama" width="235">
+                <img src="Yukarin.png" alt="Yukarin" width="235">
+                <img src="Iwaki.png" alt="Iwaki" width="235">
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Overview Section -->
+            <div class="section-box">
+                <h3 class="section-title">Sprite Downloads</h3>
+                <p>Welcome to the Sprite Downloads gallery! Here you can find various custom sprites and image assets. Feel free to download and use them for your projects.</p>
+            </div>
+
+            <!-- Sprite Sheets / Grid (5 per row, 2 rows = 10 total) -->
+            <div class="section-box">
+                <h3 class="section-title">Available Sprites (10 Items)</h3>
+                
+                <div class="sprite-grid">
+                    <!-- Row 1 (Items 1 - 5) -->
+                    <div class="sprite-card">
+                        <img src="sprites/Mikan.png" alt="Mikan" class="sprite-preview">
+                        <div class="sprite-title">Mikan</div>
+                        <a href="sprites/Mikan.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Shimizu.png" alt="Shimizu" class="sprite-preview">
+                        <div class="sprite-title">Shimizu(Shimi-Chan)</div>
+                        <a href="sprites/Shimizu.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Haruyama.png" alt="Haruyama" class="sprite-preview">
+                        <div class="sprite-title">Haruyama</div>
+                        <a href="sprites/Haruyama.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Rio.png" alt="Rio" class="sprite-preview">
+                        <div class="sprite-title">Rio</div>
+                        <a href="sprites/Rio.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Yukarin.png" alt="Yukarin" class="sprite-preview">
+                        <div class="sprite-title">Yukarin</div>
+                        <a href="sprites/Yukarin.png" download class="download-btn">Download</a>
+                    </div>
+
+                    <!-- Row 2 (Items 6 - 10) -->
+                    <div class="sprite-card">
+                        <img src="sprites/Toshikazu.png" alt="Toshikazu" class="sprite-preview">
+                        <div class="sprite-title">Toshikazu</div>
+                        <a href="sprites/Toshikazu.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Yoshioka.png" alt="Yoshioka" class="sprite-preview">
+                        <div class="sprite-title">Yoshioka</div>
+                        <a href="sprites/Yoshioka.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Iwaki.png" alt="Iwaki" class="sprite-preview">
+                        <div class="sprite-title">Iwaki</div>
+                        <a href="sprites/Iwaki.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Asada.png" alt="Asada" class="sprite-preview">
+                        <div class="sprite-title">Asada</div>
+                        <a href="sprites/Asada.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Kajii.png" alt="Kajii" class="sprite-preview">
+                        <div class="sprite-title">Kajii</div>
+                        <a href="sprites/Kajii.png" download class="download-btn">Download</a>
+                    </div>
+                    
+                    <div class="sprite-card">
+                        <img src="sprites/Mie.png" alt="Mie" class="sprite-preview">
+                        <div class="sprite-title">Mie</div>
+                        <a href="sprites/Mie.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Nobara.png" alt="Nobara" class="sprite-preview">
+                        <div class="sprite-title">Nobara</div>
+                        <a href="sprites/Nobara.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Nitta.png" alt="Nitta" class="sprite-preview">
+                        <div class="sprite-title">Nitta</div>
+                        <a href="sprites/Nitta.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Takada.png" alt="Takada" class="sprite-preview">
+                        <div class="sprite-title">Takada</div>
+                        <a href="sprites/Takada.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Mori.png" alt="Mori" class="sprite-preview">
+                        <div class="sprite-title">Mori</div>
+                        <a href="sprites/Mori.png" download class="download-btn">Download</a>
+                    </div>
+             
+                    <div class="sprite-card">
+                        <img src="sprites/Tsukamoto.png" alt="Tsukamoto" class="sprite-preview">
+                        <div class="sprite-title">Tsukamoto</div>
+                        <a href="sprites/Tsukamoto.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Yamakawa.png" alt="Yamakawa" class="sprite-preview">
+                        <div class="sprite-title">Yamakawa</div>
+                        <a href="sprites/Yamakawa.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Yamada.png" alt="Yamada" class="sprite-preview">
+                        <div class="sprite-title">Yamada</div>
+                        <a href="sprites/Yamada.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Tomomi.png" alt="Tomomi" class="sprite-preview">
+                        <div class="sprite-title">Tomomi</div>
+                        <a href="sprites/Tomomi.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Kaori.png" alt="Kaori" class="sprite-preview">
+                        <div class="sprite-title">Kaori</div>
+                        <a href="sprites/Kaori.png" download class="download-btn">Download</a>
+                    </div>
+                                
+                    <div class="sprite-card">
+                        <img src="sprites/Aki.png" alt="Aki" class="sprite-preview">
+                        <div class="sprite-title">Aki</div>
+                        <a href="sprites/Aki.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Koyama.png" alt="Koyama" class="sprite-preview">
+                        <div class="sprite-title">Koyama</div>
+                        <a href="sprites/Koyama.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Yokota.png" alt="Yokota" class="sprite-preview">
+                        <div class="sprite-title">Yokota</div>
+                        <a href="sprites/Yokota.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Yuzuhiko.png" alt="Yuzuhiko" class="sprite-preview">
+                        <div class="sprite-title">Yuzuhiko</div>
+                        <a href="sprites/Yuzuhiko.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Fujino.png" alt="Fujino" class="sprite-preview">
+                        <div class="sprite-title">Fujino</div>
+                        <a href="sprites/Fujino.png" download class="download-btn">Download</a>
+                    </div>
+
+                    <div class="sprite-card">
+                        <img src="sprites/Sudou.png" alt="Sudou" class="sprite-preview">
+                        <div class="sprite-title">Sudou</div>
+                        <a href="sprites/Sudou.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Ishida.png" alt="Ishida" class="sprite-preview">
+                        <div class="sprite-title">Ishida Yuri</div>
+                        <a href="sprites/Ishida.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Kawashima.png" alt="Kawashima" class="sprite-preview">
+                        <div class="sprite-title">Kawashima</div>
+                        <a href="sprites/Kawashima.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Yamashita.png" alt="Yamashita" class="sprite-preview">
+                        <div class="sprite-title">Yamashita</div>
+                        <a href="sprites/Yamashita.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Oyamada.png" alt="Oyamada" class="sprite-preview">
+                        <div class="sprite-title">Oyamada</div>
+                        <a href="sprites/Oyamada.png" download class="download-btn">Download</a>
+                    </div>  
+                    
+                    <div class="sprite-card">
+                        <img src="sprites/Kawai.png" alt="Kawai" class="sprite-preview">
+                        <div class="sprite-title">Kawai</div>
+                        <a href="sprites/Kawai.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/TachibanaM.png" alt="Tachibana Mother" class="sprite-preview">
+                        <div class="sprite-title">Tachibana Mother</div>
+                        <a href="sprites/TachibanaM.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/TachibanaF.png" alt="Tachibana Father" class="sprite-preview">
+                        <div class="sprite-title">Tachibana Father</div>
+                        <a href="sprites/TachibanaF.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Mizushima.png" alt="Mizushima" class="sprite-preview">
+                        <div class="sprite-title">Mizushima</div>
+                        <a href="sprites/Mizushima.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Toyama.png" alt="Toyama" class="sprite-preview">
+                        <div class="sprite-title">Toyama</div>
+                        <a href="sprites/Toyama.png" download class="download-btn">Download</a>
+                    </div>  
+                    
+                    <div class="sprite-card">
+                        <img src="sprites/Misumi.png" alt="Misumi" class="sprite-preview">
+                        <div class="sprite-title">Misumi</div>
+                        <a href="sprites/Misumi.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Oowada.png" alt="Oowada" class="sprite-preview">
+                        <div class="sprite-title">Oowada(Hohoemi)</div>
+                        <a href="sprites/Oowada.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Hiroshi.png" alt="Hiroshi" class="sprite-preview">
+                        <div class="sprite-title">Hiroshi</div>
+                        <a href="sprites/Hiroshi.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Taku.png" alt="Taku" class="sprite-preview">
+                        <div class="sprite-title">Taku</div>
+                        <a href="sprites/Taku.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Hakamada.png" alt="Hakamada" class="sprite-preview">
+                        <div class="sprite-title">Hakamada</div>
+                        <a href="sprites/Hakamada.png" download class="download-btn">Download</a>
+                    </div>
+                    
+                    <div class="sprite-card">
+                        <img src="sprites/Ooyama.png" alt="Ooyama" class="sprite-preview">
+                        <div class="sprite-title">Ooyama</div>
+                        <a href="sprites/Ooyama.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/AsadaShintaro.png" alt="Asada Shintaro" class="sprite-preview">
+                        <div class="sprite-title">Asada Shintaro</div>
+                        <a href="sprites/AsadaShintaro.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/KajiiShunsuke.png" alt="Kajii Shunsuke" class="sprite-preview">
+                        <div class="sprite-title">Kajii Shunsuke</div>
+                        <a href="sprites/KajiiShunsuke.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Okamoto.png" alt="Okamoto" class="sprite-preview">
+                        <div class="sprite-title">Okamoto</div>
+                        <a href="sprites/Okamoto.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Hara.png" alt="Hara" class="sprite-preview">
+                        <div class="sprite-title">Hara</div>
+                        <a href="sprites/Hara.png" download class="download-btn">Download</a>
+                    </div>  
+                    
+                    <div class="sprite-card">
+                        <img src="sprites/Murakami.png" alt="Murakami" class="sprite-preview">
+                        <div class="sprite-title">Murakami</div>
+                        <a href="sprites/Murakami.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/Miyajima.png" alt="Miyajima" class="sprite-preview">
+                        <div class="sprite-title">Miyajima</div>
+                        <a href="sprites/Miyajima.png" download class="download-btn">Download</a>
+                    </div>                    
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Goodie's Room - GoodieFirexer</p>
+    </footer>
+</div>
+
+</body>
+</html>
