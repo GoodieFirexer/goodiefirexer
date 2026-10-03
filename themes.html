@@ -153,8 +153,34 @@
             margin-top: 10px;
         }
 
+        .section-box {
+            background: #ffffff;
+            border: 2px groove #4682b4;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .theme-title {
+            background: linear-gradient(to right, #4682b4, #87ceeb);
+            color: #ffffff;
+            padding: 5px 10px;
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 18px;
+            border-bottom: 2px solid #000080;
+            text-shadow: 1px 1px #000000;
+        }
+
+        /* スプライトグリッド設定 (1段5列) */
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
         /* 個別スプライトカード */
-        .sprite-card {
+        .theme-card {
             background: #e0f6ff;
             border: 2px outset #ffffff;
             padding: 8px;
@@ -166,7 +192,7 @@
             box-sizing: border-box;
         }
 
-        .sprite-preview {
+        .theme-preview {
             width: 100%;
             height: 80px;
             object-fit: contain;
@@ -175,7 +201,7 @@
             margin-bottom: 6px;
         }
 
-        .sprite-title {
+        .theme-title {
             font-size: 11px;
             color: #000080;
             margin: 2px 0 6px 0;
@@ -250,6 +276,9 @@
             <img src="Yoshioka.png" alt="Yoshioka" width="235">
             <img src="Toshikazu.png" alt="Toshikazu" width="235">
             <img src="Rio.png" alt="Rio" width="235">
+            <img src="Haruyama.png" alt="Haruyama" width="235">
+            <img src="Yukarin.png" alt="Yukarin" width="235">
+            <img src="Iwaki.png" alt="Iwaki" width="235">
         </ul>
     </nav>
 
@@ -259,68 +288,94 @@
             <h3 class="section-title">TTTE's Featured Themes Download</h3>
             <p>Welcome to the Themes Download page! You can check out and download my original compositions and arrangements below.</p>
 
-            <!-- 1行5枚 × 2段 ＝ 10枚のジャケット配置領域 -->
-            <div class="themes-grid">
-                <!-- 1 -->
-                <div class="theme-card">
-                    <img src="musics/1.jpg" alt="Runaway James" width="125">
-                    <div class="song-title">A High-Terrifying and Dangerous Troublesome Truck</div>
-                    <a href="musics/A High-Terrifying and Dangerous Troublesome Truck.mp3" download class="download-btn">DOWNLOAD</a>
-                </div>
-                <!-- 2 -->
-                <div class="theme-card">
-                    <img src="musics/2.jpg" alt="James and Sir Topham Hatt" width="125">
-                    <div class="song-title">Super Mario : Super Show - Overworld</div>
-                    <a href="musics/Super Mario Super Show - Overworld.mp3" download class="download-btn">DOWNLOAD</a>
-                </div>
-                <!-- 3 -->
-                <div class="theme-card">
-                    <img src="musics/3.jpg" alt="Gordon, Boco and Clay China Twins" width="125">
-                    <div class="song-title">Determination</div>
+            <!-- Themes / Grid (5 per row, 2 rows = 10 total) -->
+            <div class="section-box">
+                <h3 class="section-title">Available Sprites (10 Items)</h3>
+                
+                <!-- Row 1 (Items 1 - 5) -->
+                <div class="theme-grid">
+                    <!-- 1 -->
+                    <div class="theme-card">
+                        <img src="musics/1.jpg" alt="Runaway James" class="theme-preview">
+                        <div class="song-title">A High-Terrifying and Dangerous Troublesome Truck</div>
+                        <a href="musics/A High-Terrifying and Dangerous Troublesome Truck.mp3" download class="download-btn">DOWNLOAD</a>
+                    </div>
+                    <div class="theme-card">
+                        <img src="musics/2.jpg" alt="James and Sir Topham Hatt" class="theme-preview">
+                        <div class="song-title">Super Mario : Super Show Overworld</div>
+                        <a href="musics/Super Mario Super Show - Overworld.mp3" download class="download-btn">DOWNLOAD</a>
+                    </div>
+                    <div class="theme-card">
+                        <img src="musics/3.jpg" alt="Gordon, Boco and Clay China Twins" class="theme-preview">
+                        <div class="song-title">Determination</div>
                     <a href="musics/Determination.mp3" download class="download-btn">DOWNLOAD</a>
-                </div>
-                <!-- 4 -->
-                <div class="theme-card">
-                    <img src="musics/4.jpg" alt="Edward" width="125">
-                    <div class="song-title">Edward's Hurrying Theme</div>
-                    <a href="musics/Edward's Hurrying Theme.mp3" download class="download-btn">DOWNLOAD</a>
-                </div>
-                <!-- 5 -->
-                <div class="theme-card">
-                    <img src="musics/5.jpg" alt="Duck" width="125">
-                    <div class="song-title">Daisy Bell</div>
-                    <a href="musics/Daisy Bell.mp3" download class="download-btn">DOWNLOAD</a>
-                </div>
-                <!-- 6 -->
-                <div class="theme-card">
-                    <img src="musics/6.jpg" alt="Gordon" width="125">
-                    <div class="song-title">A Day Out of Gordon</div>
-                    <a href="musics/A Day Out of Gordon.mp3" download class="download-btn">DOWNLOAD</a>
-                </div>
-                <!-- 7 -->
-                <div class="theme-card">
-                    <img src="musics/7.jpg" alt="Toby" width="125">
-                    <div class="song-title">Jazzy Toby</div>
-                    <a href="musics/Jazzy Toby.mp3" download class="download-btn">DOWNLOAD</a>
-                </div>
-                <!-- 8 -->
-                <div class="theme-card">
-                    <img src="musics/8.jpg" alt="Salty and Thomas" width="125">
-                    <div class="song-title">Salty, Dockyard and Red</div>
-                    <a href="musics/Salty, Dockyard and Red.mp3" download class="download-btn">DOWNLOAD</a>
-                </div>
-                <!-- 9 -->
-                <div class="theme-card">
-                    <img src="musics/9.jpg" alt="Oliver" width="125">
-                    <div class="song-title">Oliver's Silly Little Theme</div>
+                    </div>
+                    <div class="theme-card">
+                        <img src="musics/4.jpg" alt="Edward" class="theme-preview"">
+                        <div class="song-title">Edward's Hurrying Theme</div>
+                        <a href="musics/Edward's Hurrying Theme.mp3" download class="download-btn">DOWNLOAD</a>
+                    </div>
+                    <div class="theme-card">
+                        <img src="musics/5.jpg" alt="Duck" class="theme-preview">
+                        <div class="song-title">Daisy Bell</div>
+                        <a href="musics/Daisy Bell.mp3" download class="download-btn">DOWNLOAD</a>
+                    </div>
+                    <div class="theme-card">
+                        <img src="musics/6.jpg" alt="Gordon" class="theme-preview">
+                        <div class="song-title">A Day Out of Gordon</div>
+                        <a href="musics/A Day Out of Gordon.mp3" download class="download-btn">DOWNLOAD</a>
+                    </div>
+                    <div class="theme-card">
+                        <img src="musics/7.jpg" alt="Toby" class="theme-preview">
+                        <div class="song-title">Jazzy Toby</div>
+                        <a href="musics/Jazzy Toby.mp3" download class="download-btn">DOWNLOAD</a>
+                    </div>
+                    <div class="theme-card">
+                        <img src="musics/8.jpg" alt="Salty and Thomas" class="theme-preview">
+                        <div class="song-title">Salty, Dockyard and Red</div>
+                        <a href="musics/Salty, Dockyard and Red.mp3" download class="download-btn">DOWNLOAD</a>
+                    </div>
+                    <div class="theme-card">
+                        <img src="musics/9.jpg" alt="Oliver" class="theme-preview">
+                        <div class="song-title">Oliver's Silly Little Theme</div>
                     <a href="musics/Oliver's Silly Little Theme.mp3" download class="download-btn">DOWNLOAD</a>
-                </div>
-                <!-- 10 -->
-                <div class="theme-card">
-                    <img src="musics/10.jpg" alt="Arthur" width="125">
-                    <div class="song-title">Arthur's Travels</div>
-                    <a href="musics/Arthur's Travels.mp3" download class="download-btn">DOWNLOAD</a>
-                </div>
+                    </div>
+                    <div class="theme-card">
+                        <img src="musics/10.jpg" alt="Arthur" class="theme-preview">
+                        <div class="song-title">Arthur's Travels</div>
+                        <a href="musics/Arthur's Travels.mp3" download class="download-btn">DOWNLOAD</a>
+                    </div>
+                    <div class="theme-card">
+                        <img src="musics/11.jpg" alt="Henry" class="theme-preview">
+                        <div class="song-title">AHenry's Fishy Travels</div>
+                        <a href="musics/Henry's Fishy Travels.mp3" download class="download-btn">DOWNLOAD</a>
+                    </div>
+                    <div class="theme-card">
+                        <img src="musics/12.jpg" alt="Duncan" class="theme-preview">
+                        <div class="song-title">Duncan's HiT-Era Theme (Series-4)</div>
+                        <a href="musics/Duncan's HiT-Era Theme.mp3" download class="download-btn">DOWNLOAD</a>
+                    </div>
+                    <div class="theme-card">
+                        <img src="musics/13.jpg" alt="The Arlesdale Railway" class="theme-preview">
+                        <div class="song-title">The Arlesdale Railway's Theme (Series-2)</div>
+                    <a href="musics/The Arlesdale Railway's Theme.mp3" download class="download-btn">DOWNLOAD</a>
+                    </div>
+                    <div class="theme-card">
+                        <img src="musics/14.jpg" alt="Donald and Douglas" class="theme-preview">
+                        <div class="song-title">Donald and Douglas' Series-20 Theme (Series-2)</div>
+                        <a href="musics/Donald and Douglas' Series-20 Theme.mp3" download class="download-btn">DOWNLOAD</a>
+                    </div>
+                    <div class="theme-card">
+                        <img src="musics/15.jpg" alt="Gordon" class="theme-preview">
+                        <div class="song-title">Gordon's Series-5 Theme (Series-3)</div>
+                        <a href="musics/Gordon's Series-5 Theme.mp3" download class="download-btn">DOWNLOAD</a>
+                    </div>
+                    <div class="theme-card">
+                        <img src="musics/16.jpg" alt="Barry" class="theme-preview">
+                        <div class="song-title">Barry's Theme</div>
+                        <a href="musics/Barry's Theme.mp3" download class="download-btn">DOWNLOAD</a>
+                    </div>                                                            
+                 </div>
             </div>
         </div>
     </main>
