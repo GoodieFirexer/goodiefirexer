@@ -201,7 +201,17 @@
             border-style: inset;
         }
 
-        /* 画面幅が狭い場合（モバイル等）のフォールバック調整 */
+        /* クリック不可（無効化）のボタン用スタイル */
+        .download-btn.disabled {
+            background: #a0a0a0;     /* ボタンの色をグレーに変更 */
+            color: #ffffff;
+            cursor: not-allowed;     /* マウスカーソルを禁止マークに変更 */
+            pointer-events: none;   /* クリックイベントを完全無効化 */
+            opacity: 0.7;            /* 少し透明にして非活性感を出す */
+            border-style: solid;
+        }
+
+/* 画面幅が狭い場合（モバイル等）のフォールバック調整 */
         @media (max-width: 768px) {
             .main-layout {
                 flex-direction: column;
@@ -264,9 +274,9 @@
                 <p>Welcome to the Sprite Downloads gallery! Here you can find various custom sprites and image assets. Feel free to download and use them for your projects.</p>
             </div>
 
-            <!-- Sprite Sheets / Grid (5 per row, 2 rows = 10 total) -->
+            <!-- Main Sprites Section -->
             <div class="section-box">
-                <h3 class="section-title">Available Sprites (10 Items)</h3>
+                <h3 class="section-title">Main Sprites (49 Items)</h3>
                 
                 <div class="sprite-grid">
                     <!-- Row 1 (Items 1 - 5) -->
@@ -514,7 +524,64 @@
                         <img src="sprites/Miyajima.png" alt="Miyajima" class="sprite-preview">
                         <div class="sprite-title">Miyajima</div>
                         <a href="sprites/Miyajima.png" download class="download-btn">Download</a>
-                    </div>                    
+                    </div> 
+                </div>
+            </div>
+
+            <!-- Alternate Universe Sprites Section -->
+            <div class="section-box">
+                <h3 class="section-title">Alternate Universe Sprites (10 Items)</h3>
+                <div class="sprite-grid">
+                    <div class="sprite-card">
+                        <img src="sprites/WWII TBR 1~8.png" alt="WWII TBR No.1~8" class="sprite-preview">
+                        <div class="sprite-title">TBR No.1~8 (WWII Black Liveries)</div>
+                        <a href="sprites/WWII TBR 1~8.png" download class="download-btn">Download</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/NOIMAGE.png" alt="AU Sprite 2" class="sprite-preview">
+                        <div class="sprite-title">AU Sprite 2</div>
+                        <a class="download-btn disabled" tabindex="-1">To be decided</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/NOIMAGE.png" alt="AU Sprite 3" class="sprite-preview">
+                        <div class="sprite-title">AU Sprite 3</div>
+                        <a class="download-btn disabled" tabindex="-1">To be decided</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/NOIMAGE.png" alt="AU Sprite 4" class="sprite-preview">
+                        <div class="sprite-title">AU Sprite 4</div>
+                        <a class="download-btn disabled" tabindex="-1">To be decided</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/NOIMAGE.png" alt="AU Sprite 5" class="sprite-preview">
+                        <div class="sprite-title">AU Sprite 5</div>
+                        <a class="download-btn disabled" tabindex="-1">To be decided</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/NOIMAGE.png" alt="AU Sprite 6" class="sprite-preview">
+                        <div class="sprite-title">AU Sprite 6</div>
+                        <a class="download-btn disabled" tabindex="-1">To be decided</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/NOIMAGE.png" alt="AU Sprite 7" class="sprite-preview">
+                        <div class="sprite-title">AU Sprite 7</div>
+                        <a class="download-btn disabled" tabindex="-1">To be decided</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/NOIMAGE.png" alt="AU Sprite 8" class="sprite-preview">
+                        <div class="sprite-title">AU Sprite 8</div>
+                        <a class="download-btn disabled" tabindex="-1">To be decided</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/NOIMAGE.png" alt="AU Sprite 9" class="sprite-preview">
+                        <div class="sprite-title">AU Sprite 9</div>
+                        <a class="download-btn disabled" tabindex="-1">To be decided</a>
+                    </div>
+                    <div class="sprite-card">
+                        <img src="sprites/NOIMAGE.png" alt="AU Sprite 10" class="sprite-preview">
+                        <div class="sprite-title">AU Sprite 10</div>
+                        <a class="download-btn disabled" tabindex="-1">To be decided</a>
+                    </div>
                 </div>
             </div>
         </main>
