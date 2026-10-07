@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goodie's Room - Sprite Downloads</title>
+    <title>Goodie's Room - My Games MODs</title>
     <style>
         /* フォント定義 (Flange BQ Bold) */
         @font-face {
@@ -145,41 +145,34 @@
             text-shadow: 1px 1px #000000;
         }
 
-        /* スプライトグリッド設定 (1段5列) */
-        .sprite-grid {
+        /* MODグリッド設定 (横4列) */
+        .mod-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 10px;
             margin-top: 10px;
         }
 
-        /* 個別スプライトカード */
-        .sprite-card {
+        /* 個別MODカード（プレビュー画像無し） */
+        .mod-card {
             background: #e0f6ff;
             border: 2px outset #ffffff;
-            padding: 8px;
+            padding: 10px 8px;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
             box-sizing: border-box;
+            min-height: 85px;
         }
 
-        .sprite-preview {
-            width: 100%;
-            height: 80px;
-            object-fit: contain;
-            background-color: #ffffff;
-            border: 1px inset #87ceeb;
-            margin-bottom: 6px;
-        }
-
-        .sprite-title {
-            font-size: 11px;
+        .mod-title {
+            font-size: 12px;
             color: #000080;
-            margin: 2px 0 6px 0;
+            margin-bottom: 8px;
             word-break: break-all;
+            font-weight: bold;
         }
 
         .download-btn {
@@ -188,7 +181,7 @@
             background: #4682b4;
             color: #ffffff;
             text-decoration: none;
-            padding: 4px 0;
+            padding: 5px 0;
             border: 2px outset #ffffff;
             font-size: 11px;
             font-weight: bold;
@@ -201,7 +194,22 @@
             border-style: inset;
         }
 
-        /* 画面幅が狭い場合（モバイル等）のフォールバック調整 */
+        .download-btn.disabled {
+            background: #a0a0a0;
+            color: #ffffff;
+            cursor: not-allowed;
+            pointer-events: none;
+            opacity: 0.7;
+            border-style: solid;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        /* 画面幅が狭い場合のレスポンシブ対応 */
         @media (max-width: 768px) {
             .main-layout {
                 flex-direction: column;
@@ -209,7 +217,7 @@
             nav {
                 width: 100%;
             }
-            .sprite-grid {
+            .mod-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -218,18 +226,18 @@
 <body>
 
 <div class="container">
-    <!-- Header (Title & Side Images) -->
+    <!-- Header -->
     <header>
         <img src="Mikan.png" alt="Mikan" class="header-img">
-        <h1>Sprites : Kochi'Rail</h1>
+        <h1>My Games MODs</h1>
         <img src="Yuzuhiko.png" alt="Yuzuhiko" class="header-img">
     </header>
 
     <!-- Marquee Banner -->
-    <marquee scrollamount="4">★ Welcome to the Sprite Downloads Page! ★ Click "Download" to save your favorite images! ★</marquee>
+    <marquee scrollamount="4">★ Welcome to the My Games MODs Page! ★ Click "Download" to save your favorite MOD files! ★</marquee>
 
     <div class="main-layout">
-        <!-- Navigation Menu & Links -->
+        <!-- Navigation Menu -->
         <nav>
             <h2>Navigation Menu</h2>
             <ul>
@@ -238,7 +246,7 @@
                 <li><a href="videos.html">My Featured Videos</a></li>
                 <li><a href="themes.html">My Featured Themes</a></li>
                 <li><a href="sprites.html">Sprites : Enginen'chi</a></li>
-                <li><a href="mods.html">My Games MODs</a></li>
+                <li><a href="sprites2.html">Sprites : Kochi'Rail</a></li>
                 <li><a href="https://drive.google.com/drive/folders/1v4OHaAVX_ENdfnTeI2HdycLYOVG7YWBP" target="_blank">My TTTE' Themes is DOWNLOAD HERE!!</a></li>
             </ul>
 
@@ -251,6 +259,9 @@
                 <img src="Yoshioka.png" alt="Yoshioka" width="235">
                 <img src="Toshikazu.png" alt="Toshikazu" width="235">
                 <img src="Rio.png" alt="Rio" width="235">
+                <img src="Haruyama.png" alt="Haruyama" width="235">
+                <img src="Yukarin.png" alt="Yukarin" width="235">
+                <img src="Iwaki.png" alt="Iwaki" width="235">
             </ul>
         </nav>
 
@@ -258,68 +269,97 @@
         <main class="content">
             <!-- Overview Section -->
             <div class="section-box">
-                <h3 class="section-title">Sprite Downloads</h3>
-                <p>Welcome to the Sprite Downloads gallery! Here you can find various custom sprites and image assets. Feel free to download and use them for your projects.</p>
+                <h3 class="section-title">My Games MODs</h3>
+                <p>Welcome to the MODs download section! Here you can download various custom characters and ROM hacks.</p>
             </div>
 
-            <!-- Sprite Sheets / Grid (5 per row, 2 rows = 10 total) -->
+            <!-- Custom Chatacter only Section (18 Items) -->
             <div class="section-box">
-                <h3 class="section-title">Available Sprites (10 Items)</h3>
-                
-                <div class="sprite-grid">
-                    <!-- Row 1 (Items 1 - 5) -->
-                    <div class="sprite-card">
-                        <img src="sprites/Ryoutsu Kankchi.png" alt="Ryoutsu" class="sprite-preview">
-                        <div class="sprite-title">Ryoutsu</div>
-                        <a href="sprites/Ryoutsu Kankchi.png" download class="download-btn">Download</a>
+                <h3 class="section-title">Custom Chatacter only (18 Items)</h3>
+                <div class="mod-grid">
+                    <div class="mod-card">
+                        <div class="mod-title">Shintaro Asada</div>
+                        <a href="mkds/AsadaMKDS.zip" download class="download-btn">Download</a>
                     </div>
-                    <div class="sprite-card">
-                        <img src="sprites/Nakagawa Keiichi.png" alt="Nakagawa" class="sprite-preview">
-                        <div class="sprite-title">Nakagawa</div>
-                        <a href="sprites/Nakagawa Keiichi.png" download class="download-btn">Download</a>
+                    <div class="mod-card">
+                        <div class="mod-title">Shunsuke Kajii</div>
+                        <a href="mkds/KajiiMKDS.zip" download class="download-btn">Download</a>
                     </div>
-                    <div class="sprite-card">
-                        <img src="sprites/Akimoto Reiko.png" alt="Reiko" class="sprite-preview">
-                        <div class="sprite-title">Reiko</div>
-                        <a href="sprites/Akimoto Reiko.png" download class="download-btn">Download</a>
+                    <div class="mod-card">
+                        <div class="mod-title">Okamoto</div>
+                        <a href="mkds/OkamotoMKDS.zip" download class="download-btn">Download</a>
                     </div>
-                    <div class="sprite-card">
-                        <img src="sprites/Oohara Daijiro.png" alt="Oohara" class="sprite-preview">
-                        <div class="sprite-title">Oohara</div>
-                        <a href="sprites/Oohara Daijiro.png" download class="download-btn">Download</a>
+                    <div class="mod-card">
+                        <div class="mod-title">Mario Kong</div>
+                        <a href="mkds/MarioKongMKDS.zip" download class="download-btn">Download</a>
                     </div>
-                    <div class="sprite-card">
-                        <img src="sprites/Terai Youichi.png" alt="Terai" class="sprite-preview">
-                        <div class="sprite-title">Terai</div>
-                        <a href="sprites/Terai Youichi.png" download class="download-btn">Download</a>
+                    <div class="mod-card">
+                        <div class="mod-title">Kumamon</div>
+                        <a href="mkds/KumamonMKDS.zip" download class="download-btn">Download</a>
                     </div>
+                    <div class="mod-card">
+                        <div class="mod-title">Cinnamoroll</div>
+                        <a href="mkds/CinnamorollMKDS.zip" download class="download-btn">Download</a>
+                    </div>
+                    <div class="mod-card">
+                        <div class="mod-title">Ichimaru</div>
+                        <a href="mkds/IchimaruMKDS.zip" download class="download-btn">Download</a>
+                    </div>
+                    <div class="mod-card">
+                        <div class="mod-title">Donkey Kong (Redesign)</div>
+                        <a href="mkds/DKRedesignMKDS.zip" download class="download-btn">Download</a>
+                    </div>
+                    <div class="mod-card">
+                        <div class="mod-title">Koopa Troopa</div>
+                        <a href="mkds/KoopaTroopaMKDS.zip" download class="download-btn">Download</a>
+                    </div>
+                    <div class="mod-card">
+                        <div class="mod-title">King Boo</div>
+                        <a href="mkds/KingBooMKDS.zip" download class="download-btn">Download</a>
+                    </div>
+                    <div class="mod-card">
+                        <div class="mod-title">Diddy Kong</div>
+                        <a href="mkds/DiddyKongMKDS.zip" download class="download-btn">Download</a>
+                    </div>
+                    <div class="mod-card">
+                        <div class="mod-title">Petey Piranha</div>
+                        <a href="mkds/PeteyPiranhaMKDS.zip" download class="download-btn">Download</a>
+                    </div>
+                    <div class="mod-card">
+                        <div class="mod-title">Munchlax</div>
+                        <a href="mkds/MunchlaxMKDS.zip" download class="download-btn">Download</a>
+                    </div>
+                    <div class="mod-card">
+                        <div class="mod-title">Munchevoir (Munchlax in Gardevoir's Cosplay)</div>
+                        <a href="mkds/MunchevoirMKDS.zip" download class="download-btn">Download</a>
+                    </div>
+                    <div class="mod-card">
+                        <div class="mod-title">Ronald Mcdonald</div>
+                        <a href="mkds/RonaldMcdonaldMKDS.zip" download class="download-btn">Download</a>
+                    </div>
+                    <div class="mod-card">
+                        <div class="mod-title">Mikan Tachibana</div>
+                        <a href="mkds/MikanMKDS.zip" download class="download-btn">Download</a>
+                    </div>
+                    <div class="mod-card">
+                        <div class="mod-title">Robo-Mother (Atashin'chi)</div>
+                        <a href="mkds/Robo-MotherMKDS.zip" download class="download-btn">Download</a>
+                    </div>
+                    <div class="mod-card">
+                        <div class="mod-title">Shinnosuke Nohara</div>
+                        <a href="mkds/ShinnosukeMKDS.zip" download class="download-btn">Download</a>
+                    </div>
+                </div>
+            </div>
 
-                    <!-- Row 2 (Items 6 - 10) -->
-                    <div class="sprite-card">
-                        <img src="sprites/Honda Hayato.png" alt="Honda" class="sprite-preview">
-                        <div class="sprite-title">Honda</div>
-                        <a href="sprites/Honda Hayato.png" download class="download-btn">Download</a>
+            <!-- ROM Hacks Section (1 Item) -->
+            <div class="section-box">
+                <h3 class="section-title">ROM Hacks (1 Item)</h3>
+                <div class="mod-grid">
+                    <div class="mod-card">
+                        <div class="mod-title">Mikan Kart DS (European Only)</div>
+                        <a href="mkds/MikanDS.xdelta" download class="download-btn">Download</a>
                     </div>
-                    <div class="sprite-card">
-                        <img src="sprites/Tonda Gomesu.png" alt="Tonda" class="sprite-preview">
-                        <div class="sprite-title">Tonda</div>
-                        <a href="sprites/Tonda Gomesu.png" download class="download-btn">Download</a>
-                    </div>
-                    <div class="sprite-card">
-                        <img src="sprites/Sakonji Tatsunosuke.png" alt="Sakonji" class="sprite-preview">
-                        <div class="sprite-title">Sakonji</div>
-                        <a href="sprites/Sakonji Tatsunosuke.png" download class="download-btn">Download</a>
-                    </div>
-                    <div class="sprite-card">
-                        <img src="sprites/Borubo Saigo.png" alt="Borubo" class="sprite-preview">
-                        <div class="sprite-title">Borubo</div>
-                        <a href="sprites/Borubo Saigo.png" download class="download-btn">Download</a>
-                    </div>
-                    <div class="sprite-card">
-                        <img src="sprites/Asato Ai.png" alt="Asato Ai" class="sprite-preview">
-                        <div class="sprite-title">Asato Ai (Maria)</div>
-                        <a href="sprites/Asato Ai.png" download class="download-btn">Download</a>
-                    </div>                    
                 </div>
             </div>
         </main>
