@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://goodiefirexer.github.io/goodiefirexer/sitemap.xml
